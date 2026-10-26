@@ -12,6 +12,7 @@ This project helps academic supervisors, laboratory teams, and safety personnel 
 - Response tracking for Yes / No / NA across a structured set of requirements
 - Conditional comment fields triggered for non-compliant items
 - Follow-up action tracking with owners and target dates
+- Calendar (.ics) export for individual or all open follow-up actions, with configurable Singapore-time reminders
 - Save/load draft support as JSON
 - Local browser recovery for unsaved changes
 - Printable report generation suitable for PDF export
@@ -52,7 +53,23 @@ The workflow is intended for:
 - Record retention and sign-off documentation
 - Follow-up tracking and action closure
 
+## Calendar Reminders
+
+In **Follow-up actions**, enter an action description, owner and target date. Download one action using its calendar button, or use **Download all open actions (.ics)**. Completed actions are excluded; incomplete open actions must be corrected before export.
+
+The default calendar entry is 09:00 Singapore time on the target date, with a reminder one day before. Both settings can be changed, including choosing no reminder. Events are marked as free and include the form reference, laboratory location, question reference, owner and action description.
+
+Follow-up actions open on the Open filter. Use All, Overdue or Completed to review other actions. Required details and linked question wording appear beside the fields. The calendar panel allows selection of individual open actions; completed actions are excluded. Past reminder times are flagged before download and require an explicit acknowledgement if the user keeps those settings. Calendar selections and the acknowledgement are temporary controls, not saved form data.
+
+Open or import the downloaded file in Outlook or another calendar application, then confirm the event times and reminders. No invitations or emails are sent. Imported events are copies: changing or completing an action here does not update or remove its calendar event. Re-importing may create duplicates, so update or remove older calendar entries when needed.
+
+Calendar references are retained in downloaded form drafts and device recovery copies. Download an updated draft after calendar export when retaining those references for future exports.
+
 ## Notes for Maintenance
+
+- Print output keeps short question groups and both signing blocks together where space permits. Follow-up actions precede supervisor confirmation and verification.
+- All checklist questions remain in print. Scope-excluded responses show NA; retained earlier responses and comments are labelled separately. Long comments use a full-width continuation row.
+- Printed records include the export time in Singapore time. Pagination is measured at the A4 print width; recheck representative draft and completed records after changing print styles.
 
 - The checklist content is centralized in the script section of `index.html` and can be adjusted by editing the `SECTIONS` data.
 - Styling is embedded in the same file; any visual adjustments should be made carefully to preserve print layout.
