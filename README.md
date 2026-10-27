@@ -87,3 +87,11 @@ This repository does not currently include a formal license file. If this projec
 - Support import/export of completed forms as CSV or structured JSON
 - Add a server-backed persistence layer for shared team use
 - Add automated UI tests for form validation and PDF output
+
+## Optional Drawn Signatures
+
+The Academic Supervisor and verifier can draw signatures using a mouse, finger or stylus, with Clear drawing, Cancel, Use signature and Draw again controls. A name and signing date are required when capturing a signature. Signing the exported PDF or printed copy remains available.
+
+Signatures are generated locally within the single HTML file, retained in downloaded JSON drafts and device recovery, and included in printed PDFs with capture timestamps. Older unsigned drafts remain compatible. A drawn signature does not verify identity or provide certificate-based digital signing or tamper protection. Signed drafts and PDFs contain signature data and should be kept secure.
+
+Changes to record details, scope, answers, evidence or actions clear both signatures and display a warning. Changing verifier signing details clears only the verifier signature. Adding a verifier signature preserves the supervisor signature; replacing or removing the supervisor signature clears the verifier signature. Calendar reminder settings, calendar export references and navigation do not invalidate signatures. Imported signing data that does not match the restored record is cleared for review and re-signing; this prevents accidental reuse, not deliberate modification.
